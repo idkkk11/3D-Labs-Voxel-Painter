@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<link rel = "stylesheet" href = "default.css"/>
+<html>
+	
+<head>
+		<meta charset="utf-8">
+		<style>
+			body { margin: 0; }
+		</style>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+                    "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+                }
+            }
+        </script>
+	</head>
+
+	<body>
+
+        <div id="logo">
+            <div id="threed">
+                3D
+            </div>
+            <div id="labs">
+                Labs
+            </div>
+        </div>
+
+		<script src="./main.js" type="module"></script>
+
+        <div id="right-pane">
+            <div id="reset-camera" class="action-button">
+                <div class="action-text">
+                    Reset Camera
+                </div>
+            </div>
+
+            <div id="clear" class="action-button">
+                <div class="action-text">
+                    Clear Scene
+                </div>
+            </div>
+        </div>
+
+
+
+	</body>
+</html>
