@@ -81,6 +81,8 @@
     align-items: center;
     padding: 0px;
     gap: 12px;
+    /* TO DELETE */
+    opacity: 0;
 }
 
 #grid-icon {
