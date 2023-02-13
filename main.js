@@ -104,11 +104,14 @@
     function modePencil() {
         pencilMode = true;
         console.log("PENCIL");
+        // document.getElementById("pencil").style.border = "3px solid #000000;";
+
     }
 
     function modeEraser() {
         pencilMode = false;
         console.log("ERASER");
+        // document.getElementById("pencil").style.border = "none";
     }
 
     function modePlain() {
