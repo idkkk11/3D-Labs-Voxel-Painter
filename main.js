@@ -4,7 +4,7 @@
 
     // variable initialisation
     let isShiftDown = false;
-    const objects = [];
+    let objects = [];
     let controls
 
     // pencil eraser initialisation
@@ -103,6 +103,8 @@
 
     function modePencil() {
         pencilMode = true;
+        document.getElementById("pencil").className = "yellow-circle-active";
+        document.getElementById("eraser").className = "yellow-circle";
         console.log("PENCIL");
         // document.getElementById("pencil").style.border = "3px solid #000000;";
 
@@ -110,6 +112,8 @@
 
     function modeEraser() {
         pencilMode = false;
+        document.getElementById("pencil").className = "yellow-circle";
+        document.getElementById("eraser").className = "yellow-circle-active";
         console.log("ERASER");
         // document.getElementById("pencil").style.border = "none";
     }
@@ -186,6 +190,7 @@
 
                 voxel.position.copy( intersect.point ).add( intersect.face.normal );
                 voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
+                voxel.name = "cube"
                 scene.add( voxel );
                 objects.push( voxel );
             }
@@ -218,11 +223,22 @@
     }
 
     function clearScene() {
+        let count = 0;
         for (let x in objects) { // scours through the objects in the scene
             if (objects[x].geometry.type == "BoxGeometry") { // makes sure only blocks are deleted, not the plane too
                 // console.log(objects[x].geometry.type);
                 // console.log(objects[x].geometry);
-                scene.remove(objects[x])
+                scene.remove(objects[x]);
+                count += 1;
             }
         }
+        let objLen = objects.length
+        for (let i in objects) {
+            if (objects[i].name == "cube") {
+                objects.splice(i, objLen-i)
+                break
+            }
+        }
+        // objects = objects.splice(2, count);
+        console.log(objects);
     }
