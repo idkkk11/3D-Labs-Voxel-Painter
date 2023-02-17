@@ -24,7 +24,7 @@
 
     // roll-over helpers (block preview)
     const rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
-    const rollOverMaterial = new THREE.MeshBasicMaterial( { color: 0xEAF35A, opacity: 0.8, transparent: true } );
+    const rollOverMaterial = new THREE.MeshBasicMaterial( { color: 0xFF9D48, opacity: 0.8, transparent: true } );
     const rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
     scene.add( rollOverMesh );
 
@@ -36,7 +36,7 @@
     cubeMaterial.metalness = 0
     cubeMaterial.clearcoat = 0
     cubeMaterial.clearcoatRoughness = 0
-    cubeMaterial.color = new THREE.Color(0x4b4949)
+    cubeMaterial.color = new THREE.Color(0xf1f1f1)
     cubeMaterial.ior = 1.2
     cubeMaterial.thickness = 10.0
 
