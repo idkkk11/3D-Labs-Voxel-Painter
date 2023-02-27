@@ -127,7 +127,7 @@
     }
 
     function modeTextured() {
-        plainTexture = true;
+        plainTexture = false;
         document.getElementById("plain-class").className = "texture";
         document.getElementById("brick-class").className = "texture-on";
         console.log("textured");
