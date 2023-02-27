@@ -41,8 +41,8 @@
     cubeMaterial.thickness = 10.0
 
     // texture
-    const texture = new THREE.TextureLoader().load( './assets/brick_roughness.jpg' );
-    const material = new THREE.MeshBasicMaterial( { map: texture } );
+    const texture = new THREE.TextureLoader().load( './assets/lighterbrick.png' );
+    const material = new THREE.MeshPhysicalMaterial( { map: texture } );
 
     // grid
     const gridHelper = new THREE.GridHelper( 1000, 20 );
@@ -60,12 +60,13 @@
     objects.push( plane );
 
     // ambient light
-    const ambientLight = new THREE.AmbientLight( 0x606060 );
+    const ambientLight = new THREE.AmbientLight( 0xAAAAAA );
     scene.add( ambientLight );
 
     // directional light
-    const directionalLight = new THREE.DirectionalLight( 0xffffff );
+    const directionalLight = new THREE.DirectionalLight( 0x929191 );
     directionalLight.position.set( 1, 0.75, 0.5 ).normalize();
+    // directionalLight.position.set( 1, 1, 1 ).normalize();
     scene.add( directionalLight );
 
     // renderer
