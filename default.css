@@ -1,5 +1,9 @@
 @import url("./assets/fonts.css");
 
+* {
+    caret-color: transparent;
+}
+
 #logo {
     position: absolute;
     left: 2vw;
@@ -46,7 +50,7 @@
     border-radius: 16px;
     width: 6.5vw;
     height: 8vh;
-    background: #EAF35A;
+    background: #C3DED6;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -177,43 +181,52 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    gap: 28px;
+    gap: 0px;
 
     position: absolute;
     left: calc(50% - 382px/2);
     bottom: 3vw;
 
-    background: #F1F1F1;
+    background: #828B94;
     border-radius: 46px;
 }
 
 .yellow-circle {
-    background: #EAF35A;
+    background: #C3DED6;
     border-radius: 999px;
     width: 3.75vw;
     height: 3.75vw;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#pencil-icon {
+    width: 42.5%;
+    height: 42.5%;
+}
+
+#eraser-icon {
+    width: 45%;
+    height: 45%;
 }
 
 .yellow-circle-active {
-    background: #EAF35A;
+    background: #C3DED6;
     border-radius: 999px;
-    border: #000000 3px solid;
+    outline: #000000 5px solid;
     width: 3.75vw;
     height: 3.75vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-#pencil {
-    /* border: 3px solid #000000;
-    box-sizing: border-box;
-    border: none; */
 }
 
 .texture {
@@ -221,10 +234,19 @@
     height: 2.5vw;
 }
 
+.texture-on {
+    outline: 5px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
 #plain {
-    background: #8E8E8E;
+    background: #F1F1F1;
     width: 100%;
     height: 100%;
+    border-radius: 4px;
 }
 
 #brick {
@@ -236,9 +258,34 @@
     width: 3.5vw;
     height: 0px;
     
-    border: 2px solid #FFFFFF;
+    border: 2px solid #F3F4F8;
     transform: rotate(90deg);
     margin: 0;
     padding: 0;
 }
 
+/* for Video */
+
+#logo {
+    opacity: 0;
+}
+
+#bottom-right {
+    opacity: 0;
+}
+
+.pencil-tools {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+}
+
+.textures {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+}

@@ -20,7 +20,7 @@
 
     // scene initialisation
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xffffff );
+    scene.background = new THREE.Color( 0xF3F4F8 );
 
     // roll-over helpers (block preview)
     const rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
@@ -88,13 +88,14 @@
 	window.addEventListener( 'resize', onWindowResize );
 
     document.getElementById("reset-camera").addEventListener("click", resetCamera);
-    document.getElementById("clear").addEventListener("click", clearScene);
+    document.getElementById("top").addEventListener("click", topView);
+    // document.getElementById("clear").addEventListener("click", clearScene);
 
     document.getElementById("pencil").addEventListener("click", modePencil);
     document.getElementById("eraser").addEventListener("click", modeEraser);
 
-    document.getElementById("plain").addEventListener("click", modePlain);
-    document.getElementById("brick").addEventListener("click", modeBricks);
+    document.getElementById("plain").addEventListener("click", modeTextureless);
+    document.getElementById("brick").addEventListener("click", modeTextured);
 
     // initial render
     render();
@@ -118,14 +119,18 @@
         // document.getElementById("pencil").style.border = "none";
     }
 
-    function modePlain() {
+    function modeTextureless() {
         plainTexture = true;
-        console.log("PLAIN");
+        document.getElementById("plain-class").className = "texture-on";
+        document.getElementById("brick-class").className = "texture";
+        console.log("textureless");
     }
 
-    function modeBricks() {
-        plainTexture = false;
-        console.log("BRICKS");
+    function modeTextured() {
+        plainTexture = true;
+        document.getElementById("plain-class").className = "texture";
+        document.getElementById("brick-class").className = "texture-on";
+        console.log("textured");
     }
     
     function onWindowResize() {
@@ -219,6 +224,12 @@
     function resetCamera() {
         console.log("reset camera");
         camera.position.set( 500, 800, 1300 );
+        camera.lookAt( 0, 0, 0 );
+    }
+
+    function topView() {
+        console.log("reset camera");
+        camera.position.set( 0, 1400, 0 );
         camera.lookAt( 0, 0, 0 );
     }
 
