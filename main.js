@@ -125,6 +125,7 @@
         document.getElementById("plain-class").className = "texture-on";
         document.getElementById("brick-class").className = "texture";
         console.log("textureless");
+        modePencil();
     }
 
     function modeTextured() {
@@ -132,6 +133,7 @@
         document.getElementById("plain-class").className = "texture";
         document.getElementById("brick-class").className = "texture-on";
         console.log("textured");
+        modePencil();
     }
     
     function onWindowResize() {

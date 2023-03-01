@@ -26,6 +26,18 @@
     font-weight: 500;
 }
 
+#new-logo {
+    height: 8vh;
+    position: absolute;
+    left: 3vw;
+    top: 5vh;
+}
+
+#logo-image {
+    width: auto;
+    height: 100%;
+}
+
 #top-right {
     position: absolute;
     right: 3vw;
